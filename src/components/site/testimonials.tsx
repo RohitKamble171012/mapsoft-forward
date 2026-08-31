@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { ArrowLeft, ArrowRight, Quote } from "lucide-react";
 import { Section, SectionHeading } from "./section";
 import { EASE } from "./motion";
+import { img } from "@/lib/site-images";
 
 /**
  * The current maptechsoft.com testimonial block uses generic demo content.
