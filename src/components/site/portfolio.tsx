@@ -74,34 +74,16 @@ export function Portfolio() {
               className="group surface-card overflow-hidden p-0"
             >
               <div className="relative aspect-[16/11] overflow-hidden bg-surface-2">
-                <div className="absolute inset-0 grid-bg opacity-60" />
-                <motion.div
-                  className="absolute inset-0 p-5"
-                  whileHover={{ scale: 1.04 }}
-                  transition={{ duration: 0.6, ease: EASE }}
-                >
-                  <div className="surface-card h-full p-4">
-                    <div className="flex items-center gap-1.5">
-                      <span className="size-1.5 rounded-full bg-border" />
-                      <span className="size-1.5 rounded-full bg-border" />
-                      <span className="size-1.5 rounded-full bg-brand/60" />
-                    </div>
-                    <div className="mt-3 grid grid-cols-3 gap-2">
-                      {[0, 1, 2].map((k) => (
-                        <div key={k} className="h-8 rounded-md bg-surface-2" />
-                      ))}
-                    </div>
-                    <div className="mt-3 flex h-14 items-end gap-1.5">
-                      {[40, 70, 52, 88, 62, 76].map((h, k) => (
-                        <div
-                          key={k}
-                          className="flex-1 rounded-t bg-brand/25 transition-colors duration-500 group-hover:bg-brand/70"
-                          style={{ height: `${h}%` }}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                </motion.div>
+                <motion.img
+                  src={p.img}
+                  alt={p.title}
+                  loading="lazy"
+                  decoding="async"
+                  className="size-full object-cover object-top"
+                  whileHover={{ scale: 1.06 }}
+                  transition={{ duration: 0.7, ease: EASE }}
+                />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-foreground/45 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                 <span className="absolute top-4 right-4 rounded-full bg-background/90 px-2.5 py-1 text-[10px] font-bold tracking-[0.14em] text-brand uppercase backdrop-blur">
                   {p.cat}
                 </span>
