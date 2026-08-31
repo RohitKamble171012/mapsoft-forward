@@ -74,8 +74,10 @@ export function TechnologyStack() {
                   {t.name}
                 </span>
               </motion.div>
-            </Floating>
+              </Floating>
+            </div>
           ))}
+
 
           <div
             className="pointer-events-none absolute"
