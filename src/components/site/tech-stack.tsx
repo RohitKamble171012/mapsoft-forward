@@ -49,13 +49,13 @@ export function TechnologyStack() {
           </svg>
 
           {tech.map((t, i) => (
-            <Floating
+            <div
               key={t.name}
               className="absolute"
-              amplitude={12}
-              duration={6 + (i % 4)}
-              delay={t.d}
+              style={{ left: t.x, top: t.y, transform: "translate(-50%,-50%)" }}
             >
+              <Floating amplitude={12} duration={6 + (i % 4)} delay={t.d}>
+
               <motion.div
                 style={{ position: "relative" }}
                 initial={{ opacity: 0, scale: 0.6 }}
