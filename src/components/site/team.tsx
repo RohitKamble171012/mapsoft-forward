@@ -2,11 +2,20 @@ import { motion } from "motion/react";
 import { Linkedin, Mail } from "lucide-react";
 import { Section, SectionHeading } from "./section";
 import { EASE, StaggerGroup, StaggerItem } from "./motion";
+import { teamPhotos } from "@/lib/site-images";
 
 const team = [
-  { name: "Manish Yengantiwar", role: "CEO (Chief Executive Officer)", initials: "MY" },
-  { name: "Prsadd Patil", role: "COO (Chief Operating Officer)", initials: "PP" },
-  { name: "Sandeep Ghatge", role: "Team Lead (Software Development)", initials: "SG" },
+  {
+    name: "Manish Yengantiwar",
+    role: "CEO (Chief Executive Officer)",
+    photo: teamPhotos.manish,
+  },
+  { name: "Prsadd Patil", role: "COO (Chief Operating Officer)", photo: teamPhotos.prsadd },
+  {
+    name: "Sandeep Ghatge",
+    role: "Team Lead (Software Development)",
+    photo: teamPhotos.sandeep,
+  },
 ];
 
 export function Team() {
