@@ -1,4 +1,5 @@
 import { Reveal } from "./motion";
+import { logoUrl } from "@/lib/site-images";
 
 const nav = ["Home", "About", "Products", "Services", "Portfolio", "Team", "Contact"];
 const services = [
