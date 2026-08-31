@@ -1,17 +1,21 @@
 import { motion } from "motion/react";
 import { Section, SectionHeading } from "./section";
 import { EASE, Floating } from "./motion";
+import { techLogos } from "@/lib/site-images";
 
-const tech = [
-  { name: "Angular / TypeScript", short: "NG", x: "12%", y: "18%", d: 0 },
-  { name: ".NET Core", short: ".NET", x: "42%", y: "6%", d: 0.4 },
-  { name: "HTML", short: "HTML", x: "74%", y: "16%", d: 0.8 },
-  { name: "CSS", short: "CSS", x: "88%", y: "48%", d: 1.2 },
-  { name: "SQL Server", short: "SQL", x: "62%", y: "62%", d: 0.6 },
-  { name: "Flutter", short: "FL", x: "30%", y: "70%", d: 1 },
-  { name: "WordPress", short: "WP", x: "6%", y: "56%", d: 1.4 },
-  { name: "JavaScript", short: "JS", x: "48%", y: "36%", d: 0.2 },
+const positions = [
+  { x: "12%", y: "18%", d: 0 },
+  { x: "42%", y: "6%", d: 0.4 },
+  { x: "74%", y: "16%", d: 0.8 },
+  { x: "88%", y: "48%", d: 1.2 },
+  { x: "62%", y: "62%", d: 0.6 },
+  { x: "30%", y: "70%", d: 1 },
+  { x: "6%", y: "56%", d: 1.4 },
+  { x: "48%", y: "36%", d: 0.2 },
 ];
+
+const tech = positions.map((p, i) => ({ ...p, ...techLogos[i]! }));
+const extraTech = techLogos.slice(positions.length);
 
 export function TechnologyStack() {
   return (
