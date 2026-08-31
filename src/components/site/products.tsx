@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { ArrowUpRight, Boxes, Users, Building2 } from "lucide-react";
 import { Section, SectionHeading } from "./section";
 import { EASE, StaggerGroup, StaggerItem } from "./motion";
+import { img, portfolioImages } from "@/lib/site-images";
 
 const products = [
   {
@@ -10,6 +11,7 @@ const products = [
     tag: "Flagship",
     copy: "Cloud-based ERP solution for distributors, light manufacturers and service businesses.",
     points: ["Cloud-native", "Modular", "Role-based"],
+    img: portfolioImages.erp1,
   },
   {
     icon: Users,
@@ -17,6 +19,7 @@ const products = [
     tag: "Integrated",
     copy: "Customer relationship management capabilities integrated into the ERP ecosystem.",
     points: ["Pipeline view", "Unified records", "Team activity"],
+    img: img.crm,
   },
   {
     icon: Building2,
@@ -24,6 +27,7 @@ const products = [
     tag: "Vertical",
     copy: "Cloud-based ERP solution designed for wholesale distribution businesses and multiple vertical industries.",
     points: ["Distribution-first", "Multi-industry", "Cloud delivery"],
+    img: portfolioImages.accolent1,
   },
 ];
 
