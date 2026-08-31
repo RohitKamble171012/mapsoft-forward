@@ -11,6 +11,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { EASE, Floating, Magnetic } from "./motion";
+import { portfolioImages } from "@/lib/site-images";
 
 const bars = [38, 62, 46, 78, 58, 92, 70];
 
