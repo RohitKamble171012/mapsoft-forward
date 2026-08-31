@@ -76,6 +76,7 @@ export function Testimonials() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: dir * -60 }}
               transition={{ duration: 0.55, ease: EASE }}
+              className="relative"
             >
               <p className="mt-6 max-w-3xl text-xl leading-snug font-bold tracking-tight text-balance-tight sm:text-3xl">
                 “{s.quote}”
