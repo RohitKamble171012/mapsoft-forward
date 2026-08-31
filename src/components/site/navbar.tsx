@@ -3,6 +3,7 @@ import { AnimatePresence, motion, useScroll, useSpring } from "motion/react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Magnetic, EASE } from "./motion";
+import { logoUrl } from "@/lib/site-images";
 
 const links = [
   { label: "Home", href: "#home" },
