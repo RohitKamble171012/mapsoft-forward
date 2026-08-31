@@ -56,8 +56,17 @@ export function Testimonials() {
       />
 
       <div className="relative mt-12 overflow-hidden">
-        <div className="surface-card relative min-h-[300px] p-8 sm:p-12">
-          <Quote className="size-9 text-brand" />
+        <div className="surface-card relative min-h-[300px] overflow-hidden p-8 sm:p-12">
+          <img
+            src={img.testimonialBg}
+            alt=""
+            aria-hidden
+            loading="lazy"
+            decoding="async"
+            className="pointer-events-none absolute inset-0 size-full object-cover opacity-[0.07]"
+          />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background via-background/85 to-transparent" />
+          <Quote className="relative size-9 text-brand" />
           <AnimatePresence mode="wait" custom={dir}>
             <motion.div
               key={i}
