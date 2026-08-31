@@ -71,6 +71,24 @@ export function ErpFeatures() {
             </p>
           </div>
 
+          <div className="relative aspect-[16/9] overflow-hidden bg-surface-2">
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={active}
+                src={img.erpFeature[active % img.erpFeature.length]}
+                alt={`${f.name} module preview`}
+                loading="lazy"
+                decoding="async"
+                className="absolute inset-0 size-full object-cover"
+                initial={{ opacity: 0, scale: 1.06 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.6, ease: EASE }}
+              />
+            </AnimatePresence>
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/70 to-transparent" />
+          </div>
+
           <div className="p-6">
             <AnimatePresence mode="wait">
               <motion.div
