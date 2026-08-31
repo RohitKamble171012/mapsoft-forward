@@ -104,7 +104,7 @@ export function ErpFeatures() {
                     transition={{ duration: 0.4, delay: i * 0.06 }}
                     className="mt-1 text-lg font-extrabold text-brand"
                   >
-                    {data[i] + i * 3}
+                    {(data[i] ?? 0) + i * 3}
                     {i === 2 ? "h" : "%"}
                   </motion.p>
                 </div>
