@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { Section, SectionHeading } from "./section";
 import { EASE } from "./motion";
+import { img } from "@/lib/site-images";
 
 const features = [
   { icon: ClipboardList, name: "Order Management", copy: "Capture, track and fulfil orders across every channel from a single queue." },
