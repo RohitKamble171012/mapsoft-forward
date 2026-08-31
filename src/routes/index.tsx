@@ -12,7 +12,6 @@ import { Industries } from "@/components/site/industries";
 import { TechnologyStack } from "@/components/site/tech-stack";
 import { Portfolio } from "@/components/site/portfolio";
 import { Clients } from "@/components/site/clients";
-import { Team } from "@/components/site/team";
 import { Testimonials } from "@/components/site/testimonials";
 import { Faq } from "@/components/site/faq";
 import { Cta } from "@/components/site/cta";
@@ -53,7 +52,6 @@ function Index() {
         <TechnologyStack />
         <Portfolio />
         <Clients />
-        <Team />
         <Testimonials />
         <Faq />
         <Cta />
