@@ -103,6 +103,31 @@ export function TechnologyStack() {
           </div>
         </div>
       </div>
+
+      <div className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+        {extraTech.map((t, i) => (
+          <motion.div
+            key={t.name}
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.5, delay: i * 0.06, ease: EASE }}
+            whileHover={{ y: -6 }}
+            className="group surface-card flex items-center gap-3 p-4"
+          >
+            <img
+              src={t.src}
+              alt={t.name}
+              loading="lazy"
+              decoding="async"
+              className="size-9 object-contain opacity-80 transition-opacity duration-500 group-hover:opacity-100"
+            />
+            <span className="text-sm font-semibold text-muted-foreground transition-colors duration-400 group-hover:text-brand">
+              {t.name}
+            </span>
+          </motion.div>
+        ))}
+      </div>
     </Section>
   );
 }
