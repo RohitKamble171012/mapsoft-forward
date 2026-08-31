@@ -11,6 +11,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { EASE, Floating, Magnetic } from "./motion";
+import { portfolioImages } from "@/lib/site-images";
 
 const bars = [38, 62, 46, 78, 58, 92, 70];
 
@@ -139,7 +140,22 @@ function HeroVisual() {
           </span>
         </div>
 
-        <div className="mt-5 flex h-32 items-end gap-2.5">
+        <motion.div
+          initial={{ opacity: 0, scale: 1.06 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.6, ease: EASE }}
+          className="mt-5 aspect-[16/10] overflow-hidden rounded-xl border border-border"
+        >
+          <img
+            src={portfolioImages.erp1}
+            alt="Mapsoft ERP operations dashboard"
+            className="size-full object-cover object-top"
+            fetchPriority="high"
+            decoding="async"
+          />
+        </motion.div>
+
+        <div className="mt-4 flex h-16 items-end gap-2">
           {bars.map((h, i) => (
             <motion.div
               key={i}

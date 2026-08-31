@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { Section, SectionHeading } from "./section";
 import { EASE, Floating, Reveal, StaggerGroup, StaggerItem } from "./motion";
+import { img } from "@/lib/site-images";
 
 const features = [
   { icon: Code2, title: "Software Design & Development", copy: "Systems designed around how your business actually runs." },
@@ -34,7 +35,21 @@ export function About() {
           <div className="brand-glow-orb pointer-events-none absolute -inset-10 opacity-50" />
           <Reveal className="relative">
             <div className="surface-card overflow-hidden p-0">
-              <div className="flex items-center gap-2 border-b border-border bg-surface px-5 py-3.5">
+              <div className="relative aspect-[16/10] overflow-hidden">
+                <motion.img
+                  src={img.about}
+                  alt="Mapsoft Technologies team collaborating on software delivery"
+                  loading="lazy"
+                  decoding="async"
+                  className="size-full object-cover"
+                  initial={{ scale: 1.12 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1.2, ease: EASE }}
+                />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-foreground/25 to-transparent" />
+              </div>
+              <div className="flex items-center gap-2 border-y border-border bg-surface px-5 py-3.5">
                 <span className="size-2.5 rounded-full bg-border" />
                 <span className="size-2.5 rounded-full bg-border" />
                 <span className="size-2.5 rounded-full bg-brand/60" />

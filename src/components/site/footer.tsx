@@ -1,4 +1,5 @@
 import { Reveal } from "./motion";
+import { logoUrl } from "@/lib/site-images";
 
 const nav = ["Home", "About", "Products", "Services", "Portfolio", "Team", "Contact"];
 const services = [
@@ -18,15 +19,14 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-[1.3fr_1fr_1fr_1fr]">
           <Reveal>
             <a href="#home" className="flex items-center gap-2.5">
-              <span className="grid size-9 place-items-center rounded-xl bg-brand text-sm font-extrabold text-primary-foreground">
-                M
-              </span>
-              <span className="text-[15px] leading-tight font-extrabold">
-                Mapsoft
-                <span className="block text-[10px] font-semibold tracking-[0.22em] text-muted-foreground uppercase">
-                  Technologies
-                </span>
-              </span>
+              <img
+                src={logoUrl}
+                alt="Mapsoft Technologies LLP"
+                width={180}
+                height={44}
+                loading="lazy"
+                className="h-10 w-auto"
+              />
             </a>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground">
               Mapsoft Technologies LLP builds custom software, ERP, mobile applications and digital

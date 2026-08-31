@@ -3,6 +3,7 @@ import { AnimatePresence, motion, useScroll, useSpring } from "motion/react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Magnetic, EASE } from "./motion";
+import { logoUrl } from "@/lib/site-images";
 
 const links = [
   { label: "Home", href: "#home" },
@@ -60,16 +61,13 @@ export function Navbar() {
           )}
         >
           <a href="#home" className="group flex items-center gap-2.5">
-            <span className="relative grid size-9 place-items-center rounded-xl bg-brand text-primary-foreground">
-              <span className="text-sm font-extrabold">M</span>
-              <span className="absolute inset-0 rounded-xl bg-brand opacity-40 blur-md transition-opacity group-hover:opacity-70" />
-            </span>
-            <span className="text-[15px] leading-tight font-extrabold tracking-tight">
-              Mapsoft
-              <span className="block text-[10px] font-semibold tracking-[0.22em] text-muted-foreground uppercase">
-                Technologies
-              </span>
-            </span>
+            <img
+              src={logoUrl}
+              alt="Mapsoft Technologies LLP"
+              width={168}
+              height={40}
+              className="h-9 w-auto transition-transform duration-500 group-hover:scale-[1.04] sm:h-10"
+            />
           </a>
 
           <ul className="hidden items-center gap-1 lg:flex">

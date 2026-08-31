@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { ArrowUpRight, Boxes, Users, Building2 } from "lucide-react";
 import { Section, SectionHeading } from "./section";
 import { EASE, StaggerGroup, StaggerItem } from "./motion";
+import { img, portfolioImages } from "@/lib/site-images";
 
 const products = [
   {
@@ -10,6 +11,7 @@ const products = [
     tag: "Flagship",
     copy: "Cloud-based ERP solution for distributors, light manufacturers and service businesses.",
     points: ["Cloud-native", "Modular", "Role-based"],
+    img: portfolioImages.erp1,
   },
   {
     icon: Users,
@@ -17,6 +19,7 @@ const products = [
     tag: "Integrated",
     copy: "Customer relationship management capabilities integrated into the ERP ecosystem.",
     points: ["Pipeline view", "Unified records", "Team activity"],
+    img: img.crm,
   },
   {
     icon: Building2,
@@ -24,6 +27,7 @@ const products = [
     tag: "Vertical",
     copy: "Cloud-based ERP solution designed for wholesale distribution businesses and multiple vertical industries.",
     points: ["Distribution-first", "Multi-industry", "Cloud delivery"],
+    img: portfolioImages.accolent1,
   },
 ];
 
@@ -73,25 +77,16 @@ export function Products() {
                 ))}
               </ul>
 
-              <div className="relative mt-8 overflow-hidden rounded-xl border border-border bg-surface p-4">
-                <div className="flex items-center gap-1.5">
-                  <span className="size-1.5 rounded-full bg-border" />
-                  <span className="size-1.5 rounded-full bg-border" />
-                  <span className="size-1.5 rounded-full bg-brand/60" />
-                </div>
-                <motion.div
-                  className="mt-3 space-y-2"
-                  initial={{ opacity: 0.6 }}
-                  whileHover={{ opacity: 1 }}
-                >
-                  {[100, 72, 86, 54].map((w, i) => (
-                    <motion.div
-                      key={i}
-                      className="h-2 rounded-full bg-gradient-to-r from-brand-soft to-surface-2 transition-all duration-500 group-hover:from-brand/60"
-                      style={{ width: `${w}%` }}
-                    />
-                  ))}
-                </motion.div>
+              <div className="relative mt-8 aspect-[16/10] overflow-hidden rounded-xl border border-border bg-surface">
+                <motion.img
+                  src={p.img}
+                  alt={`${p.name} interface`}
+                  loading="lazy"
+                  decoding="async"
+                  className="size-full object-cover object-top"
+                  whileHover={{ scale: 1.06 }}
+                  transition={{ duration: 0.7, ease: EASE }}
+                />
               </div>
 
               <a

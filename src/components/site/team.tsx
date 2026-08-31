@@ -2,11 +2,20 @@ import { motion } from "motion/react";
 import { Linkedin, Mail } from "lucide-react";
 import { Section, SectionHeading } from "./section";
 import { EASE, StaggerGroup, StaggerItem } from "./motion";
+import { teamPhotos } from "@/lib/site-images";
 
 const team = [
-  { name: "Manish Yengantiwar", role: "CEO (Chief Executive Officer)", initials: "MY" },
-  { name: "Prsadd Patil", role: "COO (Chief Operating Officer)", initials: "PP" },
-  { name: "Sandeep Ghatge", role: "Team Lead (Software Development)", initials: "SG" },
+  {
+    name: "Manish Yengantiwar",
+    role: "CEO (Chief Executive Officer)",
+    photo: teamPhotos.manish,
+  },
+  { name: "Prsadd Patil", role: "COO (Chief Operating Officer)", photo: teamPhotos.prsadd },
+  {
+    name: "Sandeep Ghatge",
+    role: "Team Lead (Software Development)",
+    photo: teamPhotos.sandeep,
+  },
 ];
 
 export function Team() {
@@ -32,8 +41,14 @@ export function Team() {
               className="group surface-card relative overflow-hidden p-7 text-center transition-shadow duration-500 hover:shadow-[0_36px_80px_-40px_var(--brand)]"
             >
               <div className="brand-glow-orb pointer-events-none absolute -top-24 left-1/2 size-56 -translate-x-1/2 rounded-full opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
-              <div className="relative mx-auto grid size-24 place-items-center rounded-3xl bg-surface-2 text-2xl font-extrabold text-brand transition-all duration-500 group-hover:scale-105 group-hover:bg-brand group-hover:text-primary-foreground">
-                {m.initials}
+              <div className="relative mx-auto size-32 overflow-hidden rounded-3xl bg-surface-2 ring-1 ring-border transition-all duration-500 group-hover:ring-brand">
+                <img
+                  src={m.photo}
+                  alt={m.name}
+                  loading="lazy"
+                  decoding="async"
+                  className="size-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
               </div>
               <h3 className="relative mt-6 text-lg font-extrabold">{m.name}</h3>
               <p className="relative mt-1 text-sm text-muted-foreground">{m.role}</p>

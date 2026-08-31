@@ -3,19 +3,20 @@ import { AnimatePresence, motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 import { Section, SectionHeading } from "./section";
 import { EASE } from "./motion";
+import { img, portfolioImages as pi } from "@/lib/site-images";
 
 type Cat = "All" | "ERP" | "Mobile" | "Web";
 
-const projects: { title: string; cat: Exclude<Cat, "All">; note: string }[] = [
-  { title: "ERP Software", cat: "ERP", note: "Core operations platform" },
-  { title: "Mobile App Development", cat: "Mobile", note: "Cross-platform delivery" },
-  { title: "Modern Web Design", cat: "Web", note: "Marketing & brand site" },
-  { title: "Enterprise Web Portal", cat: "Web", note: "Internal portal" },
-  { title: "ERP Features Showcase", cat: "ERP", note: "Module walkthrough" },
-  { title: "Business Management App", cat: "Mobile", note: "Team operations" },
-  { title: "Custom Web Applications", cat: "Web", note: "Bespoke tooling" },
-  { title: "Accolent ERP System", cat: "ERP", note: "Wholesale distribution" },
-  { title: "E-Commerce Mobile App", cat: "Mobile", note: "Storefront experience" },
+const projects: { title: string; cat: Exclude<Cat, "All">; note: string; img: string }[] = [
+  { title: "ERP Software", cat: "ERP", note: "Core operations platform", img: pi.erp1 },
+  { title: "Mobile App Development", cat: "Mobile", note: "Cross-platform delivery", img: pi.mobile4 },
+  { title: "Modern Web Design", cat: "Web", note: "Marketing & brand site", img: pi.p11 },
+  { title: "Enterprise Web Portal", cat: "Web", note: "Internal portal", img: pi.p12 },
+  { title: "ERP Features Showcase", cat: "ERP", note: "Module walkthrough", img: pi.erpFeatures },
+  { title: "Business Management App", cat: "Mobile", note: "Team operations", img: img.crm },
+  { title: "Custom Web Applications", cat: "Web", note: "Bespoke tooling", img: pi.p13 },
+  { title: "Accolent ERP System", cat: "ERP", note: "Wholesale distribution", img: pi.accolent1 },
+  { title: "E-Commerce Mobile App", cat: "Mobile", note: "Storefront experience", img: pi.accolent3 },
 ];
 
 const cats: Cat[] = ["All", "ERP", "Mobile", "Web"];
@@ -74,34 +75,16 @@ export function Portfolio() {
               className="group surface-card overflow-hidden p-0"
             >
               <div className="relative aspect-[16/11] overflow-hidden bg-surface-2">
-                <div className="absolute inset-0 grid-bg opacity-60" />
-                <motion.div
-                  className="absolute inset-0 p-5"
-                  whileHover={{ scale: 1.04 }}
-                  transition={{ duration: 0.6, ease: EASE }}
-                >
-                  <div className="surface-card h-full p-4">
-                    <div className="flex items-center gap-1.5">
-                      <span className="size-1.5 rounded-full bg-border" />
-                      <span className="size-1.5 rounded-full bg-border" />
-                      <span className="size-1.5 rounded-full bg-brand/60" />
-                    </div>
-                    <div className="mt-3 grid grid-cols-3 gap-2">
-                      {[0, 1, 2].map((k) => (
-                        <div key={k} className="h-8 rounded-md bg-surface-2" />
-                      ))}
-                    </div>
-                    <div className="mt-3 flex h-14 items-end gap-1.5">
-                      {[40, 70, 52, 88, 62, 76].map((h, k) => (
-                        <div
-                          key={k}
-                          className="flex-1 rounded-t bg-brand/25 transition-colors duration-500 group-hover:bg-brand/70"
-                          style={{ height: `${h}%` }}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                </motion.div>
+                <motion.img
+                  src={p.img}
+                  alt={p.title}
+                  loading="lazy"
+                  decoding="async"
+                  className="size-full object-cover object-top"
+                  whileHover={{ scale: 1.06 }}
+                  transition={{ duration: 0.7, ease: EASE }}
+                />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-foreground/45 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                 <span className="absolute top-4 right-4 rounded-full bg-background/90 px-2.5 py-1 text-[10px] font-bold tracking-[0.14em] text-brand uppercase backdrop-blur">
                   {p.cat}
                 </span>
