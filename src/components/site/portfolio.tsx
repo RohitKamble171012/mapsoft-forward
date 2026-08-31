@@ -3,19 +3,20 @@ import { AnimatePresence, motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 import { Section, SectionHeading } from "./section";
 import { EASE } from "./motion";
+import { img, portfolioImages as pi } from "@/lib/site-images";
 
 type Cat = "All" | "ERP" | "Mobile" | "Web";
 
-const projects: { title: string; cat: Exclude<Cat, "All">; note: string }[] = [
-  { title: "ERP Software", cat: "ERP", note: "Core operations platform" },
-  { title: "Mobile App Development", cat: "Mobile", note: "Cross-platform delivery" },
-  { title: "Modern Web Design", cat: "Web", note: "Marketing & brand site" },
-  { title: "Enterprise Web Portal", cat: "Web", note: "Internal portal" },
-  { title: "ERP Features Showcase", cat: "ERP", note: "Module walkthrough" },
-  { title: "Business Management App", cat: "Mobile", note: "Team operations" },
-  { title: "Custom Web Applications", cat: "Web", note: "Bespoke tooling" },
-  { title: "Accolent ERP System", cat: "ERP", note: "Wholesale distribution" },
-  { title: "E-Commerce Mobile App", cat: "Mobile", note: "Storefront experience" },
+const projects: { title: string; cat: Exclude<Cat, "All">; note: string; img: string }[] = [
+  { title: "ERP Software", cat: "ERP", note: "Core operations platform", img: pi.erp1 },
+  { title: "Mobile App Development", cat: "Mobile", note: "Cross-platform delivery", img: pi.mobile4 },
+  { title: "Modern Web Design", cat: "Web", note: "Marketing & brand site", img: pi.p11 },
+  { title: "Enterprise Web Portal", cat: "Web", note: "Internal portal", img: pi.p12 },
+  { title: "ERP Features Showcase", cat: "ERP", note: "Module walkthrough", img: pi.erpFeatures },
+  { title: "Business Management App", cat: "Mobile", note: "Team operations", img: img.crm },
+  { title: "Custom Web Applications", cat: "Web", note: "Bespoke tooling", img: pi.p13 },
+  { title: "Accolent ERP System", cat: "ERP", note: "Wholesale distribution", img: pi.accolent1 },
+  { title: "E-Commerce Mobile App", cat: "Mobile", note: "Storefront experience", img: pi.accolent3 },
 ];
 
 const cats: Cat[] = ["All", "ERP", "Mobile", "Web"];
