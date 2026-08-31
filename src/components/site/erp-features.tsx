@@ -36,8 +36,9 @@ const datasets = [
 
 export function ErpFeatures() {
   const [active, setActive] = useState(0);
-  const f = features[active];
-  const data = datasets[active % datasets.length];
+  const f = features[active]!;
+  const data = datasets[active % datasets.length]!;
+
 
   return (
     <Section id="erp">
