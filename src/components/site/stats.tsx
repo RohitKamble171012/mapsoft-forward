@@ -1,11 +1,13 @@
 import { Counter, Reveal } from "./motion";
 
-const stats = [
+type Stat = { value: number | null; suffix?: string; display?: string; label: string };
+
+const stats: Stat[] = [
   { value: 39, suffix: "+", label: "Happy Clients" },
   { value: 48, suffix: "+", label: "Projects" },
   { value: null, display: "24/7", label: "Hours Of Support" },
   { value: 39, suffix: "+", label: "Smart Workers" },
-] as const;
+];
 
 export function Stats() {
   return (
@@ -14,11 +16,11 @@ export function Stats() {
         {stats.map((s, i) => (
           <Reveal key={s.label} delay={i * 0.1} className="px-2 py-10 sm:px-8 sm:py-14">
             <p className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-              {"display" in s && s.display ? (
+              {s.display ? (
                 <span className="text-brand">{s.display}</span>
               ) : (
                 <>
-                  <Counter value={s.value as number} />
+                  <Counter value={s.value ?? 0} />
                   <span className="text-brand">{s.suffix}</span>
                 </>
               )}
