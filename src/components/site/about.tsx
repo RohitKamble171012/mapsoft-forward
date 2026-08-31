@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { Section, SectionHeading } from "./section";
 import { EASE, Floating, Reveal, StaggerGroup, StaggerItem } from "./motion";
+import { img } from "@/lib/site-images";
 
 const features = [
   { icon: Code2, title: "Software Design & Development", copy: "Systems designed around how your business actually runs." },
