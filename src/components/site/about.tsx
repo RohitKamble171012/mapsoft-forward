@@ -48,7 +48,7 @@ export function About() {
                 />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-foreground/25 to-transparent" />
               </div>
-              <div className="flex items-center gap-2 border-y border-border bg-surface px-5 py-3.5">import</div>
+              <div className="flex items-center gap-2 border-y border-border bg-surface px-5 py-3.5">
                 <span className="size-2.5 rounded-full bg-border" />
                 <span className="size-2.5 rounded-full bg-border" />
                 <span className="size-2.5 rounded-full bg-brand/60" />
