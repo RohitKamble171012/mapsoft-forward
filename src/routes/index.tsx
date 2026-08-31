@@ -1,24 +1,66 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Toaster } from "@/components/ui/sonner";
+import { Navbar } from "@/components/site/navbar";
+import { Hero } from "@/components/site/hero";
+import { Stats } from "@/components/site/stats";
+import { About } from "@/components/site/about";
+import { Products } from "@/components/site/products";
+import { ErpFeatures } from "@/components/site/erp-features";
+import { Services } from "@/components/site/services";
+import { WhyMapsoft } from "@/components/site/why-mapsoft";
+import { Industries } from "@/components/site/industries";
+import { TechnologyStack } from "@/components/site/tech-stack";
+import { Portfolio } from "@/components/site/portfolio";
+import { Clients } from "@/components/site/clients";
+import { Team } from "@/components/site/team";
+import { Testimonials } from "@/components/site/testimonials";
+import { Faq } from "@/components/site/faq";
+import { Cta } from "@/components/site/cta";
+import { Contact } from "@/components/site/contact";
+import { Footer } from "@/components/site/footer";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const title = "Mapsoft Technologies LLP — Custom Software, ERP & Mobile";
+const description =
+  "Mapsoft Technologies LLP builds custom software, cloud ERP, CRM, mobile apps and digital solutions for distributors, manufacturers and service businesses.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <main>
+        <Hero />
+        <Stats />
+        <About />
+        <Products />
+        <ErpFeatures />
+        <Services />
+        <WhyMapsoft />
+        <Industries />
+        <TechnologyStack />
+        <Portfolio />
+        <Clients />
+        <Team />
+        <Testimonials />
+        <Faq />
+        <Cta />
+        <Contact />
+      </main>
+      <Footer />
+      <Toaster />
     </div>
   );
 }
